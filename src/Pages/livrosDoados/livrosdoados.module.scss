@@ -1,0 +1,82 @@
+.livrosDoadosSection {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    h2 {
+        
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+.containerCards {
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+    gap: 20px; 
+    width: 95%; 
+    height: auto; 
+}
+
+.containerLivros {
+    border: solid 3px #005695;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px; 
+    width: 20%; 
+    max-width: 300px; 
+    height: auto; 
+    box-sizing: border-box; 
+}
+
+.containerLivros img {
+    width: 80%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+h3, p {
+    text-align: center; 
+    margin: 5px 0; 
+    word-wrap: break-word; 
+}
+
+
+@media (max-width: 780px) {
+    .containerCards {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; 
+    }
+
+    .containerLivros {
+        width: 60%;
+        max-width: 90%; 
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .containerLivros {
+        width: 80%; 
+        padding: 8px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 18px; 
+    }
+
+    p {
+        font-size: 14px; 
+    }
+}
