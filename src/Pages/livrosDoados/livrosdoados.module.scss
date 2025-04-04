@@ -1,12 +1,12 @@
 .livrosDoadosSection {
-    height: 70vh;
+    min-height: 70vh; /* Permite mais espaço conforme necessário */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 20px;
 
     h2 {
-        
         font-size: 32px;
         text-align: center;
     }
@@ -14,11 +14,11 @@
 
 .containerCards {
     display: flex;
-    justify-content: flex-start; 
     flex-wrap: wrap;
+    justify-content: center; 
     gap: 20px; 
     width: 95%; 
-    height: auto; 
+    max-width: 1200px;
 }
 
 .containerLivros {
@@ -29,54 +29,68 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 20px; 
-    width: 20%; 
-    max-width: 300px; 
+    width: calc(25% - 20px); /* Ajuste para 4 livros por linha */
+    min-width: 200px;
+    max-width: 300px;
     height: auto; 
     box-sizing: border-box; 
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .containerLivros img {
-    width: 80%; 
+    width: 100%;
     height: auto;
     border-radius: 10px;
+    object-fit: cover;
 }
 
-h3, p {
-    text-align: center; 
-    margin: 5px 0; 
-    word-wrap: break-word; 
+.containerLivros h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin-top: 10px;
+    text-align: center;
 }
 
+.containerLivros p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+    text-align: center;
+}
 
-@media (max-width: 780px) {
-    .containerCards {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px; 
-    }
+.descricao {
+    font-size: 18px;
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
 
+/* Estilização da mensagem de carregamento */
+.mensagemCarregando {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
     .containerLivros {
-        width: 60%;
-        max-width: 90%; 
-        padding: 10px;
+        width: calc(33.33% - 20px); /* 3 livros por linha */
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     .containerLivros {
-        width: 80%; 
-        padding: 8px;
+        width: calc(50% - 20px); /* 2 livros por linha */
     }
+}
 
-    img {
-        width: 100%;
-    }
-
-    h3 {
-        font-size: 18px; 
-    }
-
-    p {
-        font-size: 14px; 
+@media (max-width: 480px) {
+    .containerLivros {
+        width: 90%; /* 1 livro por linha */
     }
 }
